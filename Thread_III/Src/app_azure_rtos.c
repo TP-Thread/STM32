@@ -53,7 +53,7 @@ static UCHAR tx_byte_pool_buffer[TX_APP_MEM_POOL_SIZE];
 static TX_BYTE_POOL tx_app_byte_pool;
 
 /* USER CODE BEGIN PV */
-UCHAR Trace_BUF[5120];	// Can't set it too big
+UCHAR Trace_BUF[512];	// Can't set it too big
 
 TX_THREAD Index_TCB;
 CHAR Index_STK[512];
@@ -106,7 +106,7 @@ VOID tx_application_define(VOID *first_unused_memory)
     }
 
     /* USER CODE BEGIN  App_ThreadX_Init_Success */
-	tx_trace_enable(Trace_BUF, 5120, 30);
+	tx_trace_enable(Trace_BUF, 512, 30);
 
 	tx_thread_create(&Index_TCB, "Index", Index_Entry, 0, Index_STK, 512, 1, 1,
 					 TX_NO_TIME_SLICE, TX_AUTO_START);

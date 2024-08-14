@@ -47,66 +47,67 @@
 /* USER CODE BEGIN Variables */
 
 /* USER CODE END Variables */
-/* Definitions for led */
-osThreadId_t ledHandle;
-const osThreadAttr_t led_attributes = {
-    .name = "led",
-    .stack_size = 128 * 4,
-    .priority = (osPriority_t)osPriorityLow,
+/* Definitions for index */
+osThreadId_t indexHandle;
+const osThreadAttr_t index_attributes = {
+  .name = "index",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
 };
 /* Definitions for chassis */
 osThreadId_t chassisHandle;
 const osThreadAttr_t chassis_attributes = {
-    .name = "chassis",
-    .stack_size = 512 * 4,
-    .priority = (osPriority_t)osPriorityAboveNormal,
+  .name = "chassis",
+  .stack_size = 512 * 4,
+  .priority = (osPriority_t) osPriorityAboveNormal,
 };
 /* Definitions for ins */
 osThreadId_t insHandle;
 const osThreadAttr_t ins_attributes = {
-    .name = "ins",
-    .stack_size = 1024 * 4,
-    .priority = (osPriority_t)osPriorityRealtime,
+  .name = "ins",
+  .stack_size = 1024 * 4,
+  .priority = (osPriority_t) osPriorityRealtime,
 };
 /* Definitions for vin */
 osThreadId_t vinHandle;
 const osThreadAttr_t vin_attributes = {
-    .name = "vin",
-    .stack_size = 128 * 4,
-    .priority = (osPriority_t)osPriorityBelowNormal,
+  .name = "vin",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityBelowNormal,
 };
 /* Definitions for pwm */
 osThreadId_t pwmHandle;
 const osThreadAttr_t pwm_attributes = {
-    .name = "pwm",
-    .stack_size = 128 * 4,
-    .priority = (osPriority_t)osPriorityBelowNormal,
+  .name = "pwm",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityBelowNormal,
 };
 /* Definitions for ins_event */
 osEventFlagsId_t ins_eventHandle;
 const osEventFlagsAttr_t ins_event_attributes = {
-    .name = "ins_event"};
+  .name = "ins_event"
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
 
 /* USER CODE END FunctionPrototypes */
 
-void led_task(void *argument);
+void index_task(void *argument);
 extern void chassis_task(void *argument);
 extern void ins_task(void *argument);
 extern void vin_task(void *argument);
 extern void pwm_task(void *argument);
 
+extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /**
- * @brief  FreeRTOS initialization
- * @param  None
- * @retval None
- */
-void MX_FREERTOS_Init(void)
-{
+  * @brief  FreeRTOS initialization
+  * @param  None
+  * @retval None
+  */
+void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
@@ -128,8 +129,8 @@ void MX_FREERTOS_Init(void)
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* creation of led */
-  ledHandle = osThreadNew(led_task, NULL, &led_attributes);
+  /* creation of index */
+  indexHandle = osThreadNew(index_task, NULL, &index_attributes);
 
   /* creation of chassis */
   chassisHandle = osThreadNew(chassis_task, NULL, &chassis_attributes);
@@ -154,28 +155,32 @@ void MX_FREERTOS_Init(void)
   /* USER CODE BEGIN RTOS_EVENTS */
   /* add events, ... */
   /* USER CODE END RTOS_EVENTS */
+
 }
 
-/* USER CODE BEGIN Header_led_task */
+/* USER CODE BEGIN Header_index_task */
 /**
- * @brief  Function implementing the led thread.
- * @param  argument: Not used
- * @retval None
- */
-/* USER CODE END Header_led_task */
-void led_task(void *argument)
+  * @brief  Function implementing the index thread.
+  * @param  argument: Not used
+  * @retval None
+  */
+/* USER CODE END Header_index_task */
+void index_task(void *argument)
 {
-  /* USER CODE BEGIN led_task */
+  /* init code for USB_DEVICE */
+  MX_USB_DEVICE_Init();
+  /* USER CODE BEGIN index_task */
   /* Infinite loop */
-  for (;;)
+  for(;;)
   {
     LED_G_Toggle();
     osDelay(1000);
   }
-  /* USER CODE END led_task */
+  /* USER CODE END index_task */
 }
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
 
 /* USER CODE END Application */
+

@@ -73,6 +73,8 @@ extern DMA_HandleTypeDef hdma_usart3_rx;
 
 /* USER CODE END EM */
 
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -96,7 +98,6 @@ void Error_Handler(void);
 #define BEEP_GPIO_Port GPIOD
 #define KEY_Pin GPIO_PIN_0
 #define KEY_GPIO_Port GPIOA
-#define KEY_EXTI_IRQn EXTI0_IRQn
 #define CS1_ACCEL_Pin GPIO_PIN_4
 #define CS1_ACCEL_GPIO_Port GPIOA
 #define INT1_ACCEL_Pin GPIO_PIN_4

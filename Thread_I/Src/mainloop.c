@@ -8,15 +8,23 @@
   ******************************************************************************
   */
 #include "mainloop.h"
+#include "usbd_customhid.h"
 
-// static int16_t speedSet_L;
+extern USBD_HandleTypeDef hUsbDeviceFS;
+
+uint8_t bEP1_SendBuf[64] = { 0 };
 
 /**
-	Main Loop Function
-*/
+ * Main Loop Function
+ */
 void MainLoop(void)
 {	
-	LED_G_Toggle();
+	if(USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, bEP1_SendBuf, 64) == USBD_OK)
+	{
+		bEP1_SendBuf[0]++;
+	}
 	
-	HAL_Delay(10);
+	LED_B_Toggle();
+	
+	HAL_Delay(1000);
 }
