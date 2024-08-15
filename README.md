@@ -6,11 +6,11 @@
 
 ## 1. Architecture
 
-### * Thread_I  裸机工程
+### * Thread_I：裸机工程
 
-### * Thread_I I FreeRTOS 工程
+### * Thread_III：FreeRTOS 工程
 
-### * Thread_I  ThreadX 工程
+### * Thread_III： ThreadX 工程
 
 ## 2. Maintainer
 

@@ -5,31 +5,41 @@
         }
     ],
     "settings": {
+        "files.autoGuessEncoding": true,
+        "C_Cpp.default.configurationProvider": "cl.eide",
+        "C_Cpp.errorSquiggles": "disabled",
         "files.associations": {
-            "main.h": "c",
-            "chassis_task.h": "c",
-            "math.h": "c",
-            "ins_task.h": "c",
-            "pwm_task.h": "c",
-            "vin_task.h": "c",
-            "bsp_beep.h": "c",
-            "bsp_bmi088.h": "c",
-            "bsp_bmi088_reg.h": "c",
-            "bsp_can_driver.h": "c",
-            "bsp_can.h": "c",
-            "bsp_exti.h": "c",
-            "bsp_ist8310.h": "c",
-            "bsp_key.h": "c",
-            "bsp_oled.h": "c",
-            "bsp_codetab.h": "c",
-            "bsp_pid.h": "c",
-            "bsp_ros.h": "c",
-            "bsp_sbus.h": "c",
-            "bsp_tim.h": "c",
-            "bsp_uart.h": "c",
-            "bsp_vin.h": "c",
-            "mahonyahrs.h": "c"
+            ".eideignore": "ignore",
+            "*.a51": "a51",
+            "*.h": "c",
+            "*.c": "c",
+            "*.hxx": "cpp",
+            "*.hpp": "cpp",
+            "*.c++": "cpp",
+            "*.cpp": "cpp",
+            "*.cxx": "cpp",
+            "*.cc": "cpp"
+        },
+        "[yaml]": {
+            "editor.insertSpaces": true,
+            "editor.tabSize": 4,
+            "editor.autoIndent": "advanced"
         }
     },
-    "extensions": {}
+    "extensions": {
+        "recommendations": [
+            "cl.eide",
+            "keroc.hex-fmt",
+            "xiaoyongdong.srecord",
+            "hars.cppsnippets",
+            "zixuanwang.linkerscript",
+            "redhat.vscode-yaml",
+            "IBM.output-colorizer",
+            "cschlosser.doxdocgen",
+            "ms-vscode.vscode-serial-monitor",
+            "alefragnani.project-manager",
+            "dan-c-underwood.arm",
+            "marus25.cortex-debug"
+        ]
+    }
 }

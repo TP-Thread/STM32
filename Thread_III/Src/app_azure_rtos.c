@@ -25,9 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "task_index.h"
-#include "task_mixer.h"
-#include "task_vin.h"
+#include "threadx.h"
 
 /* USER CODE END Includes */
 
@@ -53,16 +51,6 @@ static UCHAR tx_byte_pool_buffer[TX_APP_MEM_POOL_SIZE];
 static TX_BYTE_POOL tx_app_byte_pool;
 
 /* USER CODE BEGIN PV */
-UCHAR Trace_BUF[512];	// Can't set it too big
-
-TX_THREAD Index_TCB;
-CHAR Index_STK[512];
-
-TX_THREAD Mixer_TCB;
-CHAR Mixer_STK[512];
-
-TX_THREAD Vin_TCB;
-CHAR Vin_STK[1024];
 
 /* USER CODE END PV */
 
@@ -106,16 +94,7 @@ VOID tx_application_define(VOID *first_unused_memory)
     }
 
     /* USER CODE BEGIN  App_ThreadX_Init_Success */
-	tx_trace_enable(Trace_BUF, 512, 30);
-
-	tx_thread_create(&Index_TCB, "Index", Index_Entry, 0, Index_STK, 512, 1, 1,
-					 TX_NO_TIME_SLICE, TX_AUTO_START);
-
-	tx_thread_create(&Mixer_TCB, "Mixer", Mixer_Entry, 0, Mixer_STK, 512, 1, 1,
-					 TX_NO_TIME_SLICE, TX_AUTO_START);
-
-	tx_thread_create(&Vin_TCB, "Voltage", Vin_Entry, 0, Vin_STK, 1024, 4, 4,
-					 TX_NO_TIME_SLICE, TX_AUTO_START);
+	TP_Thread_Init();
 
     /* USER CODE END  App_ThreadX_Init_Success */
 

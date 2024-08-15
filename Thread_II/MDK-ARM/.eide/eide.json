@@ -2,73 +2,15 @@
   "name": "Thread_II",
   "type": "ARM",
   "dependenceList": [],
-  "srcDirs": [
-    ".eide/deps"
-  ],
+  "srcDirs": [],
   "virtualFolder": {
     "name": "<virtual_root>",
     "files": [],
     "folders": [
       {
-        "name": "::CMSIS",
-        "files": [],
-        "folders": []
-      },
-      {
         "name": "Application",
         "files": [],
         "folders": [
-          {
-            "name": "Bsp",
-            "files": [
-              {
-                "path": "../Bsp/bsp_beep.c"
-              },
-              {
-                "path": "../Bsp/bsp_bmi088.c"
-              },
-              {
-                "path": "../Bsp/bsp_can_driver.c"
-              },
-              {
-                "path": "../Bsp/bsp_can.c"
-              },
-              {
-                "path": "../Bsp/bsp_exti.c"
-              },
-              {
-                "path": "../Bsp/bsp_ist8310.c"
-              },
-              {
-                "path": "../Bsp/bsp_key.c"
-              },
-              {
-                "path": "../Bsp/bsp_oled.c"
-              },
-              {
-                "path": "../Bsp/bsp_pid.c"
-              },
-              {
-                "path": "../Bsp/bsp_ros.c"
-              },
-              {
-                "path": "../Bsp/bsp_sbus.c"
-              },
-              {
-                "path": "../Bsp/bsp_tim.c"
-              },
-              {
-                "path": "../Bsp/bsp_uart.c"
-              },
-              {
-                "path": "../Bsp/bsp_vin.c"
-              },
-              {
-                "path": "../Bsp/MahonyAHRS.c"
-              }
-            ],
-            "folders": []
-          },
           {
             "name": "MDK-ARM",
             "files": [
@@ -79,26 +21,17 @@
             "folders": []
           },
           {
-            "name": "Task",
-            "files": [
-              {
-                "path": "../Task/chassis_task.c"
-              },
-              {
-                "path": "../Task/ins_task.c"
-              },
-              {
-                "path": "../Task/pwm_task.c"
-              },
-              {
-                "path": "../Task/vin_task.c"
-              }
-            ],
-            "folders": []
-          },
-          {
             "name": "User",
             "files": [
+              {
+                "path": "../Src/main.c"
+              },
+              {
+                "path": "../Src/gpio.c"
+              },
+              {
+                "path": "../Src/freertos.c"
+              },
               {
                 "path": "../Src/adc.c"
               },
@@ -109,34 +42,106 @@
                 "path": "../Src/dma.c"
               },
               {
-                "path": "../Src/freertos.c"
-              },
-              {
-                "path": "../Src/gpio.c"
-              },
-              {
                 "path": "../Src/i2c.c"
               },
               {
-                "path": "../Src/main.c"
-              },
-              {
                 "path": "../Src/spi.c"
-              },
-              {
-                "path": "../Src/stm32f4xx_hal_msp.c"
-              },
-              {
-                "path": "../Src/stm32f4xx_hal_timebase_tim.c"
-              },
-              {
-                "path": "../Src/stm32f4xx_it.c"
               },
               {
                 "path": "../Src/tim.c"
               },
               {
                 "path": "../Src/usart.c"
+              },
+              {
+                "path": "../Src/usb_device.c"
+              },
+              {
+                "path": "../Src/usbd_conf.c"
+              },
+              {
+                "path": "../Src/usbd_desc.c"
+              },
+              {
+                "path": "../Src/usbd_cdc_if.c"
+              },
+              {
+                "path": "../Src/stm32f4xx_it.c"
+              },
+              {
+                "path": "../Src/stm32f4xx_hal_msp.c"
+              },
+              {
+                "path": "../Src/stm32f4xx_hal_timebase_tim.c"
+              }
+            ],
+            "folders": []
+          },
+          {
+            "name": "Task",
+            "files": [
+              {
+                "path": "../Task/Src/task_chassis.c"
+              },
+              {
+                "path": "../Task/Src/task_imu.c"
+              },
+              {
+                "path": "../Task/Src/task_pwm.c"
+              },
+              {
+                "path": "../Task/Src/task_vin.c"
+              }
+            ],
+            "folders": []
+          },
+          {
+            "name": "Bsp",
+            "files": [
+              {
+                "path": "../Bsp/Src/bsp_key.c"
+              },
+              {
+                "path": "../Bsp/Src/bsp_exti.c"
+              },
+              {
+                "path": "../Bsp/Src/bsp_tim.c"
+              },
+              {
+                "path": "../Bsp/Src/bsp_beep.c"
+              },
+              {
+                "path": "../Bsp/Src/bsp_vin.c"
+              },
+              {
+                "path": "../Bsp/Src/bsp_uart.c"
+              },
+              {
+                "path": "../Bsp/Src/bsp_sbus.c"
+              },
+              {
+                "path": "../Bsp/Src/bsp_ros.c"
+              },
+              {
+                "path": "../Bsp/Src/bsp_can.c"
+              },
+              {
+                "path": "../Bsp/Src/bsp_can_cmd.c"
+              },
+              {
+                "path": "../Bsp/Src/bsp_ist8310.c"
+              },
+              {
+                "path": "../Bsp/Src/bsp_bmi088.c"
+              },
+              {
+                "path": "../Bsp/Src/MahonyAHRS.c"
+              },
+              {
+                "path": "../Bsp/Src/bsp_oled.c"
+              },
+              {
+                "path": "../Bsp/Src/bsp_pid.c"
               }
             ],
             "folders": []
@@ -151,13 +156,13 @@
             "name": "STM32F4xx_HAL_Driver",
             "files": [
               {
-                "path": "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c"
+                "path": "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c"
               },
               {
-                "path": "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c"
+                "path": "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c"
               },
               {
-                "path": "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c"
+                "path": "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c"
               },
               {
                 "path": "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c"
@@ -197,6 +202,15 @@
               },
               {
                 "path": "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c"
+              },
+              {
+                "path": "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c"
+              },
+              {
+                "path": "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c"
+              },
+              {
+                "path": "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c"
               },
               {
                 "path": "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c"
@@ -290,8 +304,31 @@
               }
             ],
             "folders": []
+          },
+          {
+            "name": "USB_Device_Library",
+            "files": [
+              {
+                "path": "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c"
+              },
+              {
+                "path": "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c"
+              },
+              {
+                "path": "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c"
+              },
+              {
+                "path": "../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c"
+              }
+            ],
+            "folders": []
           }
         ]
+      },
+      {
+        "name": "::CMSIS",
+        "files": [],
+        "folders": []
       }
     ]
   },
@@ -299,7 +336,7 @@
   "deviceName": null,
   "packDir": null,
   "miscInfo": {
-    "uid": "d8d0a68c9214a098c88f6052b3543d31"
+    "uid": "b852ff4eb9c17cea2228f66a61e96509"
   },
   "targets": {
     "Thread_II": {
@@ -441,16 +478,17 @@
           "../Drivers/CMSIS/Include",
           "../Middlewares/Third_Party/FreeRTOS/Source/include",
           "../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F",
-          "../Bsp",
-          "../Task",
           "../Middlewares/Third_Party/SystemView/Config",
           "../Middlewares/Third_Party/SystemView/Sample/FreeRTOSV10",
           "../Middlewares/Third_Party/SystemView/SEGGER",
           "../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
+          "../Bsp/Inc",
+          "../Task/Inc",
+          "../Middlewares/ST/STM32_USB_Device_Library/Core/Inc",
+          "../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc",
           "RTE/_Thread_II"
         ],
         "libList": [],
-        "sourceDirList": [],
         "defineList": [
           "USE_HAL_DRIVER",
           "STM32F407xx"
@@ -458,5 +496,5 @@
       }
     }
   },
-  "version": "3.3"
+  "version": "3.4"
 }

@@ -173,7 +173,7 @@ void index_task(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    LED_G_Toggle();
+    LED_B_Toggle();
     osDelay(1000);
   }
   /* USER CODE END index_task */

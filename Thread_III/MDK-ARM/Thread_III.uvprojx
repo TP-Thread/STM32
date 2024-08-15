@@ -434,6 +434,11 @@
           <GroupName>Application/Task</GroupName>
           <Files>
             <File>
+              <FileName>threadx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Task\Src\threadx.c</FilePath>
+            </File>
+            <File>
               <FileName>task_index.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Task\src\task_index.c</FilePath>
